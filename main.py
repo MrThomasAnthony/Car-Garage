@@ -30,7 +30,7 @@ class Car:
         self.cc = cc
 
     def get_details(self):
-        print(self.brand + " - " + self.make + "\n" + self.hp + "HP (" + self.cc + "CC)\n")
+        print(self.brand + " - " + self.make + "\n" + str(self.hp) + "HP (" + str(self.cc)+ "CC)\n")
 
 class Garage:
     car_list = []
@@ -41,11 +41,12 @@ class Garage:
 
         for line in cars:
             car_info = line.replace("Brand: ","").replace("Make: ","").replace("HP: ","").replace("CC: ","").replace("\n","").replace(", "," ").split(" ")
-            self.car_list.append(Car(car_info[0], car_info[1], car_info[2], car_info[3]))
+            print(car_info)
+            self.car_list.append(Car(car_info[0], car_info[1], int(car_info[2]), int(car_info[3])))
 
     def list_all(self):
         for car in self.car_list:
-            print(car.get_brand() +" " + car.get_make()+" " + car.get_hp()+" " + car.get_cc())     
+            print(car.get_brand() +" " + car.get_make()+" " + str(car.get_hp())+" " + str(car.get_cc()))
 
 def main():
 
