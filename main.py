@@ -41,7 +41,7 @@ class Garage:
 
         for line in cars:
             car_info = line.replace("Brand: ","").replace("Make: ","").replace("HP: ","").replace("CC: ","").replace("\n","").replace(", "," ").split(" ")
-            print(car_info)
+            # print(car_info) --------------------- debuging code
             self.car_list.append(Car(car_info[0], car_info[1], int(car_info[2]), int(car_info[3])))
 
     def list_all(self):
